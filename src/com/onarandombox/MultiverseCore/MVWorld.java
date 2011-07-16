@@ -547,4 +547,76 @@ public class MVWorld {
         this.respawnWorld = respawnToWorld;
         this.config.setProperty("worlds."+this.name+".respawnworld", respawnToWorld);
     }
+
+    public Object get(AddProperties property)
+    {
+         switch (property) {
+
+            case "blockblacklist":
+                return getBlockBlacklist();
+                break;
+
+            case "playerwhitelist":
+                return getPlayerWhitelist();
+                break;
+
+            case "playerblacklist":
+                return getPlayerBlacklist();
+                break;
+
+            case "worldblacklist":
+                return getWorldBlacklist();
+                break;
+
+            case "animals":
+                return getAnimalList();
+                break;
+
+            case "monsters":
+                return getMonsterList();
+                break;
+        }
+
+        return "";
+    }
+
+    public Object get(SetProperties property)
+    {
+         switch (property) {
+            case "alias":
+                return getAlias();
+                break;
+
+            case "animals":
+                return allowAnimalSpawning();
+                break;
+
+            case "monsters":
+                return allowMonsterSpawning();
+                break;
+
+            case "pvp":
+                return getPvp();
+                break;
+
+            case "scaling":
+                return getScaling();
+                break;
+
+            case "aliascolor":
+                return getAliasColor();
+                break;
+
+            case "color":
+                return getColor();
+                break;
+
+            case "respawn":
+                return getRespawnToWorld();
+                break;
+        }
+
+        return "";
+    }
+
 }
